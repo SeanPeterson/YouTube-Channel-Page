@@ -5,7 +5,7 @@ Display Entire catalog of a YouTube user's channel utilizing the YouTube API
 By default it displays a given YouTube channels catalog in descending order sorted by date. The videos are lazy loaded with N number of videos loaded on a page at a time. Utilizes an infinite scrolling technique to move through the videos. Also supports custom search functionality on the given channel.
 
 #Set-Up
-Inside the search.js file
+Inside the search.js file<br>
 -set the const API_KEY variable to your YouTube Data API key <br>
 -set the const CHANNEL_ID variable to the channel id value of the channel you wish to display videos from.
 
