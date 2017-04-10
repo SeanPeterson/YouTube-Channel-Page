@@ -7,10 +7,6 @@ var jQueryNextPageToken;
 var orderByDate = true;
 var firstLoad = true;
 
-//Constants
-const API_KEY = "";
-const CHANNEL_ID = "";
-
 // Your use of the YouTube API must comply with the Terms of Service:
 // https://developers.google.com/youtube/terms
 
@@ -43,15 +39,14 @@ function showResponse(response) {
      //search(jQueryNextPageToken);
 }
 
-// Called automatically when JavaScript client library is loaded.
-    
-    setTimeout(function(){ gapi.client.load('youtube', 'v3', onYouTubeApiLoad); }, 1000);
+// Called automatically when JavaScript client library is loaded.  
+gapi.client.load('youtube', 'v3', onYouTubeApiLoad); 
 
 // Called automatically when YouTube API interface is loaded (see line 9).
 function onYouTubeApiLoad() {
     // This API key is intended for use only in this lesson.
     // See https://goo.gl/PdPA1 to get a key for your own applications.
-    gapi.client.setApiKey(API_KEY);
+    gapi.client.setApiKey('AIzaSyD5Ii8RJaAkHtTth23m4OE3HRdmF5Qck2c');
 
     search();
 }
@@ -66,7 +61,7 @@ function search(jQuerypageToken) {
             maxResults: VIDEOS_ON_SINGLE_PAGE,
             order: 'date',
             pageToken: jQuerypageToken,
-            channelId: "CHANNEL_ID"
+            channelId: "UCVm5_JXtY5GEdZrWXQeqjyw"
         });
       }
       else{
@@ -76,7 +71,7 @@ function search(jQuerypageToken) {
             maxResults: VIDEOS_ON_SINGLE_PAGE,
             pageToken: jQuerypageToken,
             q: customSearch,
-            channelId: "CHANNEL_ID"
+            channelId: "UCVm5_JXtY5GEdZrWXQeqjyw"
         });
       }
     
