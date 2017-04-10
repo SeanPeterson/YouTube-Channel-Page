@@ -46,7 +46,7 @@ gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
 function onYouTubeApiLoad() {
     // This API key is intended for use only in this lesson.
     // See https://goo.gl/PdPA1 to get a key for your own applications.
-    gapi.client.setApiKey('AIzaSyD5Ii8RJaAkHtTth23m4OE3HRdmF5Qck2c');
+    gapi.client.setApiKey('');
 
     search();
 }
@@ -61,7 +61,7 @@ function search(jQuerypageToken) {
             maxResults: VIDEOS_ON_SINGLE_PAGE,
             order: 'date',
             pageToken: jQuerypageToken,
-            channelId: "UCVm5_JXtY5GEdZrWXQeqjyw"
+            channelId: ""
         });
       }
       else{
@@ -71,7 +71,7 @@ function search(jQuerypageToken) {
             maxResults: VIDEOS_ON_SINGLE_PAGE,
             pageToken: jQuerypageToken,
             q: customSearch,
-            channelId: "UCVm5_JXtY5GEdZrWXQeqjyw"
+            channelId: ""
         });
       }
     
