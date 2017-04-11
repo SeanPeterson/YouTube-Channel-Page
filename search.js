@@ -6,7 +6,8 @@ var jQueryPreviousPageToken;
 var jQueryNextPageToken;
 var orderByDate = true;
 var firstLoad = true;
-
+var finished = false;
+var currentPage = 0;
 // Your use of the YouTube API must comply with the Terms of Service:
 // https://developers.google.com/youtube/terms
 
@@ -19,6 +20,11 @@ function showResponse(response) {
    
      var TotalNumberOfVideos = jsonObj.pageInfo.totalResults;
      numOfPages = Math.ceil(TotalNumberOfVideos/VIDEOS_ON_SINGLE_PAGE);
+
+     //check if on last page
+     currentPage++;
+     if((currentPage * VIDEOS_ON_SINGLE_PAGE) >= (TotalNumberOfVideos - VIDEOS_ON_SINGLE_PAGE))
+      finished = true;
 
      //deal the next and previous buttons/tokens
      if(jsonObj.prevPageToken != null)
@@ -137,18 +143,25 @@ var loading = false;
     // if scrollbar reaces to bottom
     var pageHeight = (scrl_pos + win_h);
     pageHeight += 200;
-     // console.log("Scroll height" + document.body.scrollHeight);
-   // console.log("lessThan" + pageHeight);
+  
     if (document.body.scrollHeight <= pageHeight) {
+      //show loading wheel
+      jQuery('#loading-wheel img').removeClass("hidden");
       loading = true;
       window.onscroll = null;
       search(jQueryNextPageToken);
+
       nextScroll = true;
     }
   }
 }
 
 jQuery(window).scroll(function() {
+
+  if(finished)
+    jQuery('#loading-wheel img').addClass("hidden");
+
+
   if(!loading)
   {
     // register event on scrollbar

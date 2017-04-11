@@ -1,0 +1,43 @@
+/**
+ * This app.css is all yours, if you wish to have it ready with your application put it in here!
+ */
+
+.hidden{
+	display: none;
+}
+
+#loading-wheel{
+	width: 100%;
+	text-align: center;
+}
+
+#loading-wheel img{
+	width: auto;
+	height: 4rem;
+}
+
+ .youtube-content h2{padding-top: 1rem !important; padding-left: 1rem;}
+
+.youtube-content a{display: inline;}
+
+#videos iframe{min-height: auto;
+width: 100% !important;}
+@media(min-width:768px){
+	.youtube-content h2{padding-top: 2rem;}
+	#videos iframe{width: 33.33% !important;}
+	.search-box-section{padding-left: 2rem;}
+	.youtube-content h2{padding-left: 2rem;}
+}
+.assistive-text {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+.search-box-section{padding-left: 1rem;}
+
+.search-box-section ul li{display: inline-block;}
+
+.search-box-section input{
+	max-width: 30rem;
+	display: inline-block;
+}
